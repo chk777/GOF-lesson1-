@@ -1,5 +1,6 @@
 ﻿
 #include <conio.h>
+#include <windows.h>
 
 #include "SBomber.h"
 #include "MyTools.h"
