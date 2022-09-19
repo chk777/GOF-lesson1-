@@ -8,6 +8,7 @@
 #include "Ground.h"
 #include "Tank.h"
 #include "House.h"
+#include "ScreenSingleton.h"
 
 using namespace std;
 using namespace MyTools;
@@ -32,8 +33,8 @@ SBomber::SBomber()
 
     LevelGUI* pGUI = new LevelGUI;
     pGUI->SetParam(passedTime, fps, bombsNumber, score);
-    const uint16_t maxX = GetMaxX();
-    const uint16_t maxY = GetMaxY(); 
+    const uint16_t maxX = ScreenSingleton::GetInstance().GetMaxX();
+    const uint16_t maxY = ScreenSingleton::GetInstance().GetMaxY(); 
     const uint16_t offset = 3;
     const uint16_t width = maxX - 7;
     pGUI->SetPos(offset, offset);
@@ -128,7 +129,7 @@ void SBomber::CheckBombsAndGround()
     const double y = pGround->GetY();
     for (size_t i = 0; i < vecBombs.size(); i++)
     {
-        if (vecBombs[i]->GetY() >= y) // Ïåðåñå÷åíèå áîìáû ñ çåìëåé
+        if (vecBombs[i]->GetY() >= y) // ÃÃ¥Ã°Ã¥Ã±Ã¥Ã·Ã¥Ã­Ã¨Ã¥ Ã¡Ã®Ã¬Ã¡Ã» Ã± Ã§Ã¥Ã¬Ã«Ã¥Ã©
         {
             pGround->AddCrater(vecBombs[i]->GetX());
             CheckDestoyableObjects(vecBombs[i]);
@@ -324,7 +325,7 @@ void SBomber::DrawFrame()
         }
     }
 
-    GotoXY(0, 0);
+    ScreenSingleton::GetInstance().GotoXY(0, 0);
     fps++;
 
     FindLevelGUI()->SetParam(passedTime, fps, bombsNumber, score);
