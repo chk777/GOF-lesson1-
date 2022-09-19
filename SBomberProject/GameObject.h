@@ -1,4 +1,5 @@
 #pragma once
+#include"ScreenSingleton.h"
 
 class GameObject {
 public:
