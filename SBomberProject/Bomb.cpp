@@ -10,6 +10,6 @@ using namespace MyTools;
 void Bomb::Draw() const
 {
     MyTools::SetColor(CC_LightMagenta);
-    GotoXY(x, y);
+    ScreenSingleton::GetInstance().GotoXY(x, y);
     cout << "*";
 }
