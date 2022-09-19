@@ -5,7 +5,7 @@
 
 namespace MyTools {
 
-    // Палитра цветов от 0 до 15
+    // ГЏГ Г«ГЁГІГ°Г  Г¶ГўГҐГІГ®Гў Г®ГІ 0 Г¤Г® 15
     enum ConsoleColor
     {
         CC_Black = 0,
@@ -28,15 +28,7 @@ namespace MyTools {
 
 	//=============================================================================================
 
-	void ClrScr();
-
-	void __fastcall GotoXY(double x, double y);
-
-	uint16_t GetMaxX();
-
-	uint16_t GetMaxY();
-
-    void SetColor(ConsoleColor color);
+    	void SetColor(ConsoleColor color);
 
 	//=============================================================================================
 
