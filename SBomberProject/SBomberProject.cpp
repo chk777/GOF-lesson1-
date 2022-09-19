@@ -4,6 +4,7 @@
 
 #include "SBomber.h"
 #include "MyTools.h"
+#include "ScreenSingleton.h"
 
 using namespace std;
 using namespace MyTools;
@@ -24,7 +25,7 @@ int main(void)
             game.ProcessKBHit();
         }
 
-        MyTools::ClrScr();
+        ScreenSingleton::GetInstance().ClrScr();
 
         game.DrawFrame();
         game.MoveObjects();
